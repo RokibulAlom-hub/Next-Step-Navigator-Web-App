@@ -26,7 +26,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to="/">Home</NavLink>
                             <NavLink>My Profile</NavLink>
-                            <NavLink>About</NavLink>
+                            <NavLink to="/About">About</NavLink>
 
                         </ul>
                     </div>
@@ -36,7 +36,7 @@ const Navbar = () => {
                     <ul className="menu space-x-3 font-bold menu-horizontal px-1">
                         <NavLink to="/">Home</NavLink>
                         <NavLink>My Profile</NavLink>
-                        <NavLink>About</NavLink>
+                        <NavLink to="/About">About</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end">

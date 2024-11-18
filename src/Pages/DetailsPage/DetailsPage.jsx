@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const DetailsPage = () => {
     const { singleData } = useLoaderData();
@@ -23,7 +24,11 @@ const DetailsPage = () => {
         setFeedback(allmessage)
     }
     return (
+        
         <div className="min-h-screen bg-gray-100 py-10">
+            <Helmet>
+                <title>DetailsPage</title>
+            </Helmet>
             <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
                 {/* Image Section */}
                 <div className="relative">

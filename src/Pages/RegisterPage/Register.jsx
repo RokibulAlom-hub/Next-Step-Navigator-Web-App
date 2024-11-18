@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+        <Helmet>
+          <title>Register Page</title>
+        </Helmet>
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Register
         </h2>
@@ -44,7 +48,7 @@ const Register = () => {
             />
           </div>
 
-          
+
           {/* Email Input */}
           <div className="mb-4">
             <label
