@@ -3,6 +3,8 @@ import MainLayouts from "../Layouts/MainLayouts/MainLayouts";
 import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/error-page";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
+import Login from "../Pages/LoginPage/Login";
+import Register from "../Pages/RegisterPage/Register";
 
 
 const router = createBrowserRouter([
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
             
             return{singleData}
           }
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
+        },
+        {
+          path:'/register',
+          element:<Register></Register>
         }
       ]
     },

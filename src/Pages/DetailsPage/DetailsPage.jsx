@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import { useState } from "react";
 
 const DetailsPage = () => {
     const { singleData } = useLoaderData();
+    const [feedback, setFeedback] = useState([])
     const {
         id,
         image,
@@ -14,7 +16,12 @@ const DetailsPage = () => {
         counselor,
         rating,
     } = singleData;
-
+    const getComment = (e) => {
+        e.preventDefault();
+        const messeage = e.target.name.value;
+        const allmessage = [...feedback, messeage];
+        setFeedback(allmessage)
+    }
     return (
         <div className="min-h-screen bg-gray-100 py-10">
             <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
@@ -69,15 +76,28 @@ const DetailsPage = () => {
                         />
                         <p className="ml-2 text-gray-600">({rating})</p>
                     </div>
-
+                    <div className="">
+                        <h1 className="font-bold text-xl mb-2">Feedbacks</h1>
+                            {
+                                <h6 className="border border-green-300 p-4">{feedback}</h6>
+                            }
+                            <br />
+                    </div>
                     {/* CTA Buttons */}
-                    <div className="flex justify-between">
-                        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 transition duration-300">
-                            Book Now
-                        </button>
-                        <button className="bg-gray-100 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-200 transition duration-300">
-                            Back to Services
-                        </button>
+                    <div className="">
+                        <form onSubmit={getComment}>
+                            <div>
+                                <div className=" py-2 bg-white rounded-t-lg  dark:bg-gray-800">
+                                    <label for="comment" className="sr-only">Your comment</label>
+                                    <textarea type="text" name="name" rows="4" className="w-full px-0 text-sm text-gray-900 bg-white border border-green-400 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..."></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                                    Post comment
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
