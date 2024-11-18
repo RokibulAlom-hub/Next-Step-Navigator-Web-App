@@ -1,0 +1,69 @@
+[
+    {
+      "id": 1,
+      "image": "https://example.com/images/counseling-session.jpg",
+      "serviceName": "Career Counseling Sessions",
+      "category": "Online",
+      "description": "One-on-one personalized career guidance to help you make informed decisions. Our experts will work closely with you to identify your strengths, interests, and values, providing actionable steps to achieve your career goals. This session is ideal for students, professionals, or anyone seeking clarity about their career path.",
+      "pricing": 50,
+      "duration": "05-12-24 5:00 PM - 6:00 PM",
+      "counselor": "Dr. John Smith",
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "image": "https://example.com/images/resume-review.jpg",
+      "serviceName": "Resume Review",
+      "category": "Online",
+      "description": "Get your resume reviewed by industry experts to improve your job prospects. Our service includes formatting, keyword optimization, and highlighting your skills to stand out to recruiters. Suitable for fresh graduates, job switchers, and seasoned professionals looking to refresh their resumes.",
+      "pricing": 30,
+      "duration": "06-12-24 2:00 PM - 3:00 PM",
+      "counselor": "Ms. Clara Davis",
+      "rating": 4.6
+    },
+    {
+      "id": 3,
+      "image": "https://example.com/images/interview-prep.jpg",
+      "serviceName": "Interview Preparation",
+      "category": "Group",
+      "description": "Interactive group sessions designed to build your confidence and prepare you for interviews. Includes mock interview practices, feedback on communication skills, and strategies to handle challenging questions. Ideal for individuals entering competitive job markets or transitioning to a new field.",
+      "pricing": 40,
+      "duration": "07-12-24 4:00 PM - 5:30 PM",
+      "counselor": "Mr. Alan Lee",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "image": "https://example.com/images/networking-workshop.jpg",
+      "serviceName": "Professional Networking Workshop",
+      "category": "Offline",
+      "description": "Learn effective networking strategies to expand your professional connections and advance your career. This workshop covers techniques for initiating conversations, building lasting relationships, and leveraging online platforms like LinkedIn. Perfect for professionals looking to grow their network.",
+      "pricing": 60,
+      "duration": "08-12-24 10:00 AM - 12:00 PM",
+      "counselor": "Dr. Emily Watson",
+      "rating": 4.9
+    },
+    {
+      "id": 5,
+      "image": "https://example.com/images/skill-assessment.jpg",
+      "serviceName": "Skill Assessment and Career Mapping",
+      "category": "Online",
+      "description": "Identify your unique skills, talents, and strengths through a detailed assessment. Our counselors will provide insights and map out career paths aligned with your profile, giving you clarity and direction. A great option for those uncertain about their next career step.",
+      "pricing": 70,
+      "duration": "09-12-24 3:00 PM - 5:00 PM",
+      "counselor": "Ms. Rachel Green",
+      "rating": 4.8
+    },
+    {
+      "id": 6,
+      "image": "https://example.com/images/personal-development.jpg",
+      "serviceName": "Personal Development Coaching",
+      "category": "Offline",
+      "description": "Enhance your personal and professional skills with tailored coaching sessions. Focus areas include time management, leadership development, communication improvement, and setting actionable goals. This program is designed for individuals looking to elevate their personal growth and career success.",
+      "pricing": 80,
+      "duration": "10-12-24 1:00 PM - 2:30 PM",
+      "counselor": "Mr. David Johnson",
+      "rating": 4.7
+    }
+  ]
+  

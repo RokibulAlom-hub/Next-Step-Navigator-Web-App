@@ -1,9 +1,11 @@
 import React from 'react';
+import Slider from '../../Components/Slider/Slider';
+import slides from "../../../public/Slider.json"
 
 const Home = () => {
     return (
         <div>
-            this is home
+            <Slider slides={slides}></Slider>
         </div>
     );
 };
