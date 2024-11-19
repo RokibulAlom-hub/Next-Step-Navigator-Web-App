@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { Authcontext } from "../../Provider/Authprovider";
 
 const Login = () => {
+  const {userLogin,userLogout} = useContext(Authcontext)
+  const handleLogin =(e)=>{
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const email = form.get('email');
+    const password = form.get('password');
+    console.log(email,password);
+
+    userLogin(email,password)
+    .then(result =>{
+      const user = result.user;
+      console.log("logged in",user);
+      alert('logged in')
+      
+    })
+    .catch(err => {
+      console.log(err.message);
+      
+    })
+    
+  }
+  const Logout =()=>{
+    userLogout()
+    .then(() =>{
+        console.log('logout seuccess');
+        
+        alert("logout successfully")
+    })
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <Helmet>
@@ -10,7 +40,7 @@ const Login = () => {
       </Helmet>
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           {/* Email Input */}
           <div className="mb-4">
             <label
@@ -64,6 +94,13 @@ const Login = () => {
             </button>
           </div>
         </form>
+            <button
+              onClick={Logout}
+              type="submit"
+              className="w-full px-4 my-3 py-2 bg-red-400 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Logout
+            </button>
 
         {/* Register Link */}
         <p className="mt-4 text-sm text-center text-gray-600">
