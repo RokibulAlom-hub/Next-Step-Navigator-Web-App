@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Authcontext } from "../../Provider/Authprovider";
+import { Navigate, useNavigate } from "react-router-dom";
+import { BsGoogle } from "react-icons/bs";
 
 const Register = () => {
-  const {creatUser} = useContext(Authcontext)
+  const navigate = useNavigate();
+  const {creatUser,updateUserData,googlelogin} = useContext(Authcontext)
   const handleRegister =(e)=>{
     e.preventDefault();
     const form = new FormData(e.target);
@@ -19,17 +22,32 @@ const Register = () => {
     // }
     console.log(name,photoURL,email,password);
 
-    creatUser(email,password)
+    creatUser(name,photoURL,email,password)
     .then(result =>{
       const user = result.user;
-      console.log(user);
-      
+      updateUserData({displayName:name , photoURL: photoURL})
+      .then(() => {
+        navigate("/")
+      })
+      .catch((err) => {
+          console.log(err.message);
+          
+      })
     })
     .catch(err => {
       console.log(err.message);
       
     })
     
+  }
+  const handlegoggle = () =>{
+        googlelogin()
+        .then((result) =>{
+          console.log(result.user);
+          
+        })
+        .catch((err) => console.log(err.message)
+        )
   }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -121,7 +139,17 @@ const Register = () => {
             </button>
           </div>
         </form>
-
+        {/* google log in */}
+        <div className="mt-6">
+            <button
+              onClick={handlegoggle}
+              className="w-full px-4 py-2 bg-gray-500 text-white 
+              rounded-lg flex items-center justify-center gap-2"
+            >
+            <BsGoogle />
+             Google
+            </button>
+          </div>
         {/* Login Link */}
         <p className="mt-4 text-sm text-center text-gray-600">
           Already have an account?{" "}

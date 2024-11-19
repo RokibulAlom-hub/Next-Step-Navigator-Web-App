@@ -46,8 +46,12 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? 
-                        <div>
-                            <div className="btn">{user.email}</div>
+                        <div className="flex items-center gap-3">
+                            <div>{user?.displayName}</div>
+                            <div>
+                                <img className="w-16 h-14 rounded-lg" 
+                                src={user?.photoURL} alt="" />
+                            </div>
                             <Link onClick={userLogout} to='/login' className="btn">Log Out</Link >
                         </div>
                         :<Link to='/login' className="btn">Log In</Link >

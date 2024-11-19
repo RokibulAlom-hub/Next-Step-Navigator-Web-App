@@ -3,10 +3,11 @@ import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
 import toast from "react-hot-toast";
+import { BsGoogle } from "react-icons/bs"
 
 const Login = () => {
   const navigate  = useNavigate();
-  const {userLogin,userLogout} = useContext(Authcontext)
+  const {userLogin, googlelogin} = useContext(Authcontext)
   const handleLogin =(e)=>{
     e.preventDefault();
     const form = new FormData(e.target);
@@ -28,13 +29,22 @@ const Login = () => {
     })
     
   }
-  const Logout =()=>{
-    userLogout()
-    .then(() =>{
-        console.log('logout seuccess');
-        toast.success('Log Out successfully')
+  const handlegoggle = () =>{
+    googlelogin()
+    .then((result) =>{
+      console.log(result.user);
+      navigate('/')
     })
-  }
+    .catch((err) => console.log(err.message)
+    )
+}
+  // const Logout =()=>{
+  //   userLogout()
+  //   .then(() =>{
+  //       console.log('logout seuccess');
+  //       toast.success('Log Out successfully')
+  //   })
+  // }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <Helmet>
@@ -96,26 +106,36 @@ const Login = () => {
             </button>
           </div>
         </form>
-            <button
+            {/* <button
               onClick={Logout}
               type="submit"
               className="w-full px-4 my-3 py-2 bg-red-400 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               Logout
             </button>
+            <div className="mt-6"> */}
+            <button
+              onClick={handlegoggle}
+              className="w-full px-4 py-2 my-3 bg-gray-500 text-white 
+              rounded-lg flex items-center justify-center gap-2"
+            >
+            <BsGoogle />
+             Google
+            </button>
+            <p className="mt-4 text-sm text-center text-gray-600">
+              Don't have an account?{" "}
+              <Link
+                to="/register"
+                className="text-indigo-600 hover:underline"
+              >
+                Register
+              </Link>
+            </p>
+          </div>
 
         {/* Register Link */}
-        <p className="mt-4 text-sm text-center text-gray-600">
-          Don't have an account?{" "}
-          <Link
-            to="/register"
-            className="text-indigo-600 hover:underline"
-          >
-            Register
-          </Link>
-        </p>
       </div>
-    </div>
+    
   );
 };
 
