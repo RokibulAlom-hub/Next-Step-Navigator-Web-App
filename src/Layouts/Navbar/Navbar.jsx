@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 
-
 const Navbar = () => {
     return (
         <div className="bg-[#6C1C2E] text-white">
