@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const navigate  = useNavigate();
   const {userLogin,userLogout} = useContext(Authcontext)
   const handleLogin =(e)=>{
     e.preventDefault();
@@ -16,12 +18,13 @@ const Login = () => {
     .then(result =>{
       const user = result.user;
       console.log("logged in",user);
-      alert('logged in')
+      toast.success('Successfully Logged in')
+      navigate('/')
       
     })
     .catch(err => {
       console.log(err.message);
-      
+      toast.error(err.message)
     })
     
   }
@@ -29,8 +32,7 @@ const Login = () => {
     userLogout()
     .then(() =>{
         console.log('logout seuccess');
-        
-        alert("logout successfully")
+        toast.success('Log Out successfully')
     })
   }
   return (

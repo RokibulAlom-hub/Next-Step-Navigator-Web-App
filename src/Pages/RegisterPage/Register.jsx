@@ -14,7 +14,7 @@ const Register = () => {
     // it will active end of the project
     // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     // if(!passwordRegex.test(password)){
-    //   alert('there something wrong')
+    //   toast('password invalid')
     //   return
     // }
     console.log(name,photoURL,email,password);
