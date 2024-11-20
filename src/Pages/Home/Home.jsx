@@ -8,7 +8,7 @@ import Commitment from '../../Components/Commitment/Commitment';
 
 const Home = () => {
     const services = useLoaderData();
-    console.log(services);
+    // console.log(services);
 
     return (
         <div>

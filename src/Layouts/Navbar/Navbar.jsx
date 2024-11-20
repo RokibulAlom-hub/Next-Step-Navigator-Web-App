@@ -26,7 +26,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content text-red-500 bg-base-100 rounded-box z-[100] mt-3 w-52 p-2 shadow">
                             <NavLink to="/">Home</NavLink>
                             <NavLink>My Profile</NavLink>
                             <NavLink to="/About">About</NavLink>
@@ -45,10 +45,10 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? 
-                        <div className="flex items-center gap-3">
-                            <div>{user?.displayName}</div>
+                        <div className="flex items-center md:gap-3">
+                            <div className="text-sm">{user?.displayName}</div>
                             <div>
-                                <img className="w-16 h-14 rounded-lg" 
+                                <img className="w-16 hidden md:block h-14 rounded-lg" 
                                 src={user?.photoURL} alt="" />
                             </div>
                             <Link onClick={userLogout} to='/login' className="btn">Log Out</Link >

@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Authcontext } from "../../Provider/Authprovider";
 import { Navigate, useNavigate } from "react-router-dom";
 import { BsGoogle } from "react-icons/bs";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const navigate = useNavigate();
+  const [showpass,setShowpass] = useState(false)
   const {creatUser,updateUserData,googlelogin} = useContext(Authcontext)
   const handleRegister =(e)=>{
     e.preventDefault();
@@ -71,7 +74,7 @@ const Register = () => {
               name="name"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
               placeholder="Enter your name"
-              required
+              
             />
           </div>
 
@@ -88,7 +91,7 @@ const Register = () => {
               name="photoURL"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
               placeholder="Enter a photo URL"
-              required
+              
             />
           </div>
 
@@ -106,13 +109,13 @@ const Register = () => {
               name="email"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
               placeholder="Enter your email"
-              required
+              
             />
           </div>
 
 
           {/* Password Input */}
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
@@ -120,12 +123,19 @@ const Register = () => {
               Password
             </label>
             <input
-              type="password"
+              type={showpass ? "text" : "password"}
               name="password"
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
               placeholder="Enter your password"
-              required
+              
             />
+            <button 
+              onClick={()=>setShowpass(!showpass)}
+              className="btn-xs bg-base-200 rounded-md absolute right-2 bottom-3">
+              {
+                showpass ? <FaEyeSlash /> :<FaEye />
+              }
+              </button>
           </div>
 
           {/* Register Button */}
