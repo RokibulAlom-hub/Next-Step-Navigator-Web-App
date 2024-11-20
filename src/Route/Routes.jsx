@@ -8,6 +8,7 @@ import Register from "../Pages/RegisterPage/Register";
 import About from "../Layouts/About/About";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import PersonalityTest from "../Pages/PersonalityTest/PersonalityTest";
+import Myprofile from "../Layouts/Myprofile/Myprofile";
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
         path: "/personalityTest",
         element: <PrivateRoute>
           <PersonalityTest></PersonalityTest>
+        </PrivateRoute>
+      },
+      {
+        path: "/myprofile",
+        element: <PrivateRoute>
+          <Myprofile></Myprofile>
         </PrivateRoute>
       }
     ]
