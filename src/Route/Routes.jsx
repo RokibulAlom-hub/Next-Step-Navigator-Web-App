@@ -30,7 +30,7 @@ const router = createBrowserRouter([
           const data = await res.json();
 
           const singleData = data.find(d => d.id == params.id)
-          console.log(singleData);
+          // console.log(singleData);
 
           return { singleData }
         }

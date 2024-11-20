@@ -13,12 +13,12 @@ const Login = () => {
     const form = new FormData(e.target);
     const email = form.get('email');
     const password = form.get('password');
-    console.log(email,password);
+   
 
     userLogin(email,password)
     .then(result =>{
       const user = result.user;
-      console.log("logged in",user);
+      // console.log("logged in",user);
       toast.success('Successfully Logged in')
       navigate('/')
       
@@ -32,7 +32,7 @@ const Login = () => {
   const handlegoggle = () =>{
     googlelogin()
     .then((result) =>{
-      console.log(result.user);
+      // console.log(result.user);
       navigate('/')
     })
     .catch((err) => console.log(err.message)

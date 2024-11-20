@@ -20,7 +20,6 @@ const Register = () => {
     //   toast('password invalid')
     //   return
     // }
-    console.log(name,photoURL,email,password);
 
     creatUser(name,photoURL,email,password)
     .then(result =>{
@@ -43,7 +42,7 @@ const Register = () => {
   const handlegoggle = () =>{
         googlelogin()
         .then((result) =>{
-          console.log(result.user);
+          // console.log(result.user);
           
         })
         .catch((err) => console.log(err.message)

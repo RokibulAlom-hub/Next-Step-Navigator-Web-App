@@ -4,7 +4,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css/navigation';
 
 const Slider = ({ slides }) => {
-    console.log(slides);
+    // console.log(slides);
 
     return (
         <Swiper
