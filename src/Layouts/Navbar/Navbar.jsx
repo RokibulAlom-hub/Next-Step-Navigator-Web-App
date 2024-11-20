@@ -40,6 +40,11 @@ const Navbar = () => {
                         <NavLink to="/">Home</NavLink>
                         <NavLink>My Profile</NavLink>
                         <NavLink to="/About">About</NavLink>
+                        {
+                            user && <div>
+                                <NavLink to="/PersonalityTest">PersonalityTest</NavLink>
+                            </div>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">

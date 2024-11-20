@@ -14,7 +14,7 @@ const ServiceCard = ({ service }) => {
             {/* Content Section */}
             <div className="p-4">
                 {/* Service Name */}
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className="text-lg font-bold text-gray-800 mb-2">
                     {serviceName}
                 </h3>
 
@@ -32,13 +32,13 @@ const ServiceCard = ({ service }) => {
                 </div>
 
                 {/* Counselor */}
-                <p className="text-gray-500 text-xs mb-4">Counselor: {counselor}</p>
+                <p className="text-gray-500 font-bold mb-4">Counselor: ( {counselor} )</p>
 
                 {/* Learn More Button */}
                 <div className="card-actions">
                     <Link
                         to={`/details/${id}`}
-                        className="p-2 rounded-md text-sm bg-[#202B37] text-white hover:bg-[#1A222B] transition duration-300"
+                        className="p-2 rounded-md text-sm bg-[#6C1C2E] text-white hover:bg-[#1A222B] transition duration-300"
                     >
                         Learn More
                     </Link>

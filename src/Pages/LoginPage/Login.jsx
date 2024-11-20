@@ -51,7 +51,7 @@ const Login = () => {
         <title>Login Page</title>
       </Helmet>
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
+        <h2 className="text-2xl my-4 font-bold text-center text-[#6C1C2E] mb-6">Login</h2>
         <form onSubmit={handleLogin}>
           {/* Email Input */}
           <div className="mb-4">

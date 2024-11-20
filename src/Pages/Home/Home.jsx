@@ -19,7 +19,7 @@ const Home = () => {
                 <Slider slides={slides}></Slider>
             </div>
             <div className='w-11/12 mx-auto'>
-                <h1 className='text-center font-bold text-4xl  mt-5'>Our Services</h1>
+                <h1 className='text-center text-[#6C1C2E] underline font-bold text-4xl  mt-5'>Our Services</h1>
                 <Services allservices={services}></Services>
             </div>
             <div>

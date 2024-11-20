@@ -52,12 +52,12 @@ const Register = () => {
         )
   }
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
+      <div className="w-full my-4 max-w-md bg-white rounded-lg shadow-md p-6">
         <Helmet>
           <title>Register Page</title>
         </Helmet>
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl font-bold text-center text-[#6C1C2E] mb-6">
           Register
         </h2>
         <form onSubmit={handleRegister}>

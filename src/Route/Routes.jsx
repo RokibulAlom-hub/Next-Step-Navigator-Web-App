@@ -7,6 +7,7 @@ import Login from "../Pages/LoginPage/Login";
 import Register from "../Pages/RegisterPage/Register";
 import About from "../Layouts/About/About";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import PersonalityTest from "../Pages/PersonalityTest/PersonalityTest";
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,12 @@ const router = createBrowserRouter([
       {
         path: "/About",
         element: <About></About>
+      },
+      {
+        path: "/personalityTest",
+        element: <PrivateRoute>
+          <PersonalityTest></PersonalityTest>
+        </PrivateRoute>
       }
     ]
   },

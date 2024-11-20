@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import career from "../../assets/career-crossroads.jpg"
 const Commitment = () => {
     return (
@@ -14,7 +15,7 @@ const Commitment = () => {
                         <p className="mb-5">
                         Achieving your career goals can lead to positive changes in all areas of your life. Coaching empowers and educates you on how to take charge of your career and achieve the success you’ve dreamed of.
                         </p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <Link to='/register' className="btn hover:bg-[#6C1C2E] text-white bg-[#6C1C2E]">Get Started</Link>
                     </div>
                 </div>
             </div>
