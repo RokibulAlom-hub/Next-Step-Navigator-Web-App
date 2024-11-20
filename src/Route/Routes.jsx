@@ -9,6 +9,7 @@ import About from "../Layouts/About/About";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import PersonalityTest from "../Pages/PersonalityTest/PersonalityTest";
 import Myprofile from "../Layouts/Myprofile/Myprofile";
+import ForgetPass from "../Components/ForgetPassword/ForgetPass";
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <Myprofile></Myprofile>
         </PrivateRoute>
+      },
+      {
+        path: "/ForgetPass",
+        element:<ForgetPass></ForgetPass>
       }
     ]
   },

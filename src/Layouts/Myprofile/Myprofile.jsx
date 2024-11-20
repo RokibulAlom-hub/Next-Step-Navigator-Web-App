@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { Authcontext } from "../../Provider/Authprovider";
 
 const Myprofile = () => {
-    const { user,updateUserData } = useContext(Authcontext)
-    const [change,setChange] = useState(user)
+    const { user,setUser,updateUserData } = useContext(Authcontext)
     console.log(user);
     const { displayName,
         email,
@@ -19,7 +18,7 @@ const Myprofile = () => {
         
         updateUserData({displayName:name , photoURL: photoURL})
         .then(() => {
-          setChange(change)
+          setUser({displayName:name,photoURL:photoURL,...user})
         })
         .catch((err) => {
             console.log(err.message);
