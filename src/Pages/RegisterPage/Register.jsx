@@ -18,12 +18,13 @@ const Register = () => {
     const photoURL = form.get('photoURL');
     const email = form.get('email');
     const password = form.get('password');
-    // it will active end of the project
-    // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-    // if(!passwordRegex.test(password)){
-    //   toast('password invalid')
-    //   return
-    // }
+
+    // password valdation
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if(!passwordRegex.test(password)){
+      toast('password invalid')
+      return
+    }
 
     creatUser(name, photoURL, email, password)
       .then(result => {
