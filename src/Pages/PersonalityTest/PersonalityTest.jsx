@@ -7,10 +7,8 @@ const PersonalityTest = () => {
         e.preventDefault();
         const formValue = new FormData(e.target);
         const allValues = [...formValue.values()];
-        console.log(allValues);
         
         const score = allValues.filter(data => data == "yes").length;
-        console.log(score);
         if(score >= 3){
            setResult(' An Extrovert !')
         }

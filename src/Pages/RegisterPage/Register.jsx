@@ -139,7 +139,7 @@ const Register = () => {
             <div>
               <div
                 onClick={() => setShowpass(!showpass)}
-                className="btn-xs bg-base-200 rounded-md absolute right-2 bottom-3">
+                className="btn-xs bg-base-200 flex items-center rounded-md absolute right-2 bottom-3">
                 {
                   showpass ? <FaEyeSlash /> : <FaEye />
                 }

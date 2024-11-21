@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { Authcontext } from "../../Provider/Authprovider";
+import auth from "../../Firebase/Firebase.init";
 
 const Myprofile = () => {
-    const { user,setUser,updateUserData } = useContext(Authcontext)
-    console.log(user);
+    const { user,setUser,updateUserData } = useContext(Authcontext);
     const { displayName,
         email,
         photoURL
@@ -13,12 +13,11 @@ const Myprofile = () => {
         const formData = new FormData(e.target);
         const name = formData.get('name');
         const photoURL = formData.get('photoURL');
-
-        console.log(formData,name,photoURL);
         
         updateUserData({displayName:name , photoURL: photoURL})
         .then(() => {
           setUser({displayName:name,photoURL:photoURL,...user})
+          auth.currentUser.reload()
         })
         .catch((err) => {
             console.log(err.message);
@@ -27,7 +26,7 @@ const Myprofile = () => {
       
     }
     return (
-        <div className="flex justify-center items-center  min-h-screen bg-gray-100">
+        <div className=" md:flex justify-center items-center  min-h-screen bg-gray-100">
             <div>
                 <h1 className="text-2xl mt-2 font-bold text-center text-[#6C1C2E] mb-6">My Informations</h1>
                 <div className=" p-4">
@@ -49,7 +48,7 @@ const Myprofile = () => {
                 </div>
             </div>
             <div>
-                <div>
+                <div className="mx-3 my-2">
                     <h1 className="text-2xl mt-2
                              font-bold text-center text-[#6C1C2E]
                               mb-6">Update Profile</h1>

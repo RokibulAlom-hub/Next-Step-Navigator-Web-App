@@ -4,7 +4,7 @@ import { Authcontext } from "../../Provider/Authprovider";
 import "./Navbar.css"
 const Navbar = () => {
     const { user, userLogout } = useContext(Authcontext)
-    
+
     return (
         <div className="bg-[#6C1C2E] text-white">
             <div className="navbar w-11/12 mx-auto ">
@@ -57,10 +57,9 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="flex items-center md:gap-3">
-                                <div className="text-sm hidden md:block">{user?.displayName}</div>
                                 <div>
-                                    <img className="w-14 hidden md:block h-12 rounded-lg"
-                                        src={user?.photoURL} alt="" />
+                                    <img className="w-12 hidden md:block h-12 rounded-lg"
+                                        src={user?.photoURL} alt="" title={user?.displayName} />
                                 </div>
                                 <Link onClick={userLogout} to='/login' className="btn">Log Out</Link >
                             </div>

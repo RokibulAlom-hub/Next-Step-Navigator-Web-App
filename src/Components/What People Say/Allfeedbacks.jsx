@@ -6,9 +6,9 @@ import Marquee from "react-fast-marquee";
 const Allfeedbacks = ({ feedbacks }) => {
 
     return (
-        <div className='my-5 mx-4'>
+        <div className='my-5'>
             <Marquee>
-                <div className='flex  gap-4'>
+                <div className='flex'>
                     {
                         feedbacks.map(data => <Feedcard key={data.id} data={data}> </Feedcard>)
                     }

@@ -5,7 +5,7 @@ const Feedcard = ({ data }) => {
     return (
         <div>
             <div
-                className="text-center max-w-sm border border-[#6C1C2E] bg-white shadow-lg rounded-lg p-5"
+                className="text-center mx-3 max-w-sm border border-[#6C1C2E] bg-white shadow-lg rounded-lg p-5"
             >
                 <div className="w-24 h-24 mx-auto rounded-full overflow-hidden">
                     <img
