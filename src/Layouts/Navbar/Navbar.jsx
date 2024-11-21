@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
-
+import "./Navbar.css"
 const Navbar = () => {
-    const { user, setUser,userLogout } = useContext(Authcontext)
+    const { user, userLogout } = useContext(Authcontext)
     
     return (
         <div className="bg-[#6C1C2E] text-white">
@@ -26,7 +26,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content text-red-500 bg-base-100 space-y-3 rounded-box z-[100] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content text-white bg-[#6C1C2E] space-y-3  z-[100] mt-3 w-52 p-4 shadow">
                             <NavLink to="/">Home</NavLink>
                             <NavLink to="/About">About</NavLink>
                             {
@@ -38,14 +38,14 @@ const Navbar = () => {
 
                         </ul>
                     </div>
-                    <a className="font-bold text-xl">NextStep Navigator</a>
+                    <a className="font-bold  md:text-xl">NextStep Navigator</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu space-x-4 font-bold menu-horizontal px-1">
                         <NavLink to="/">Home</NavLink>
                         <NavLink to="/About">About</NavLink>
                         {
-                            user && <div className="space-x-3 ">
+                            user && <div className="space-x-5 ">
                                 <NavLink to='/myprofile'>My Profile</NavLink>
                                 <NavLink to="/PersonalityTest">PersonalityTest</NavLink>
                             </div>
@@ -53,10 +53,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {/* note here that in smaller device the image and name isnt showing for responsive ness */}
                     {
                         user ?
                             <div className="flex items-center md:gap-3">
-                                <div className="text-sm">{user?.displayName}</div>
+                                <div className="text-sm hidden md:block">{user?.displayName}</div>
                                 <div>
                                     <img className="w-14 hidden md:block h-12 rounded-lg"
                                         src={user?.photoURL} alt="" />

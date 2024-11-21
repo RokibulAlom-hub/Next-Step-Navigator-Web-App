@@ -26,7 +26,7 @@ const Slider = ({ slides }) => {
                         }}
                     >
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-                            <h2 className="text-white my-2 text-4xl font-bold">{slide.title}</h2>
+                            <h2 className="text-center text-white my-2 text-2xl md:text-4xl font-bold">{slide.title}</h2>
                             <p className="text-gray-300 w-3/5 text-center font-semibold">{slide.description}</p>
                         </div>
                     </div>

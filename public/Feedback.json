@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Emily Johnson",
+        "image": "https://i.ibb.co.com/k9kckWG/pexels-mizunokozuki-12903296.jpg",
+        "opinions": "The career counseling sessions were incredibly insightful. I now have a clear path to achieve my dream of becoming a software engineer!"
+    },
+    {
+        "id": 2,
+        "name": "Michael Brown",
+        "image": "https://i.ibb.co.com/d2w7YvS/pexels-olly-3778603.jpg",
+        "opinions": "Thanks to this platform, I was able to identify my strengths and choose a career in digital marketing that aligns with my skills."
+    },
+    {
+        "id": 3,
+        "name": "Sophia Davis",
+        "image": "https://i.ibb.co.com/kmtNQ5T/pexels-olly-3776200.jpg",
+        "opinions": "I was confused about my career after graduation, but the guidance here helped me land a great job in data analytics."
+    },
+    {
+        "id": 4,
+        "name": "William Smith",
+        "image": "https://i.ibb.co.com/X24cjFn/pexels-tiger-lily-4484071.jpg",
+        "opinions": "The resources and advice I received were top-notch. I highly recommend this site to anyone seeking career clarity."
+    },
+    {
+        "id": 5,
+        "name": "Jason Statham",
+        "image": "https://i.ibb.co.com/kMsLfF8/pexels-kampus-5920774.jpg",
+        "opinions": "Amazing experience! The career assessment test gave me the confidence to pursue a role in graphic design."
+    },
+    {
+        "id": 6,
+        "name": "James Wilson",
+        "image": "https://i.ibb.co.com/j4qzJqp/pexels-tiger-lily-4484077.jpg",
+        "opinions": "The personalized advice I received was exactly what I needed to transition into a career in project management."
+    }
+]
