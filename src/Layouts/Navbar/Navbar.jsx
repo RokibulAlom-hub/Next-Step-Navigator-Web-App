@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
 
 const Navbar = () => {
-    const { user, userLogout } = useContext(Authcontext)
-    // console.log(user);
+    const { user, setUser,userLogout } = useContext(Authcontext)
+    
     return (
         <div className="bg-[#6C1C2E] text-white">
             <div className="navbar w-11/12 mx-auto ">
@@ -26,11 +26,11 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content text-red-500 bg-base-100 rounded-box z-[100] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content text-red-500 bg-base-100 space-y-3 rounded-box z-[100] mt-3 w-52 p-2 shadow">
                             <NavLink to="/">Home</NavLink>
                             <NavLink to="/About">About</NavLink>
                             {
-                                user && <div className="space-y-2">
+                                user && <div className="space-y-2 flex flex-col">
                                     <NavLink to='/myprofile'>My Profile</NavLink>
                                     <NavLink to="/PersonalityTest">PersonalityTest</NavLink>
                                 </div>
@@ -41,11 +41,11 @@ const Navbar = () => {
                     <a className="font-bold text-xl">NextStep Navigator</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu space-x-3 font-bold menu-horizontal px-1">
+                    <ul className="menu space-x-4 font-bold menu-horizontal px-1">
                         <NavLink to="/">Home</NavLink>
                         <NavLink to="/About">About</NavLink>
                         {
-                            user && <div className="space-x-3">
+                            user && <div className="space-x-3 ">
                                 <NavLink to='/myprofile'>My Profile</NavLink>
                                 <NavLink to="/PersonalityTest">PersonalityTest</NavLink>
                             </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
                             <div className="flex items-center md:gap-3">
                                 <div className="text-sm">{user?.displayName}</div>
                                 <div>
-                                    <img className="w-16 hidden md:block h-14 rounded-lg"
+                                    <img className="w-14 hidden md:block h-12 rounded-lg"
                                         src={user?.photoURL} alt="" />
                                 </div>
                                 <Link onClick={userLogout} to='/login' className="btn">Log Out</Link >

@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
 import toast from "react-hot-toast";
 import { BsGoogle } from "react-icons/bs"
+
 
 const Login = () => {
   const navigate  = useNavigate();
@@ -38,6 +39,10 @@ const Login = () => {
     .catch((err) => console.log(err.message)
     )
 }
+  // its for scrolling problem
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   // const Logout =()=>{
   //   userLogout()
   //   .then(() =>{
@@ -64,7 +69,7 @@ const Login = () => {
               type="email"
               id="email"
               name="email"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg"
               placeholder="Enter your email"
               required
             />
@@ -82,7 +87,7 @@ const Login = () => {
               type="password"
               id="password"
               name="password"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg"
               placeholder="Enter your password"
               required
             />

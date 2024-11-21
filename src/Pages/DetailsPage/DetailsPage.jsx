@@ -1,9 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 const DetailsPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const { singleData } = useLoaderData();
     const [feedback, setFeedback] = useState([])
     const {
@@ -84,7 +87,7 @@ const DetailsPage = () => {
                     <div className="">
                         <h1 className="font-bold text-xl mb-2">Feedbacks</h1>
                             {
-                                <h6 className="border border-green-300 p-4">{feedback}</h6>
+                                feedback.map(feed => <h6 className="border border-green-300 p-4">{feed}</h6>)
                             }
                             <br />
                     </div>

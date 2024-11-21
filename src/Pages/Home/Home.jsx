@@ -15,7 +15,7 @@ const Home = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            <div >
+            <div className=''>
                 <Slider slides={slides}></Slider>
             </div>
             <div className='w-11/12 mx-auto'>

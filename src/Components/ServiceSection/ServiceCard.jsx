@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const ServiceCard = ({ service }) => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 })
+    }, [])
     const { id, image, serviceName, description, category, pricing, counselor } = service;
     return (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div
+            data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="800"
+
+            className="bg-white shadow-md rounded-lg
+         overflow-hidden hover:shadow-lg transition-shadow 
+         duration-300">
             {/* Image Section */}
             <img
                 src={image}

@@ -18,7 +18,7 @@ const Slider = ({ slides }) => {
             {slides.map((slide) => (
                 <SwiperSlide key={slide.id}>
                     <div
-                        className="h-80 w-full flex flex-col justify-center items-center"
+                        className="min-h-screen w-full flex flex-col justify-center items-center"
                         style={{
                             backgroundImage: `url(${slide.image})`,
                             backgroundSize: 'cover',

@@ -1,16 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Authcontext } from "../../Provider/Authprovider";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BsGoogle } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [showpass,setShowpass] = useState(false)
-  const {creatUser,updateUserData,googlelogin} = useContext(Authcontext)
-  const handleRegister =(e)=>{
+  const [showpass, setShowpass] = useState(false)
+  const { creatUser, updateUserData, setUser, googlelogin } = useContext(Authcontext)
+  const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const name = form.get('name');
@@ -24,33 +25,39 @@ const Register = () => {
     //   return
     // }
 
-    creatUser(name,photoURL,email,password)
-    .then(result =>{
-      const user = result.user;
-      updateUserData({displayName:name , photoURL: photoURL})
-      .then(() => {
-        navigate("/")
+    creatUser(name, photoURL, email, password)
+      .then(result => {
+        const user = result.user;
+        toast.success('Successfully register')
+        updateUserData({ displayName: name, photoURL: photoURL })
+          .then(() => {
+            setUser({ displayName: name, photoURL: photoURL, ...user })
+            navigate("/")
+          })
+          .catch((err) => {
+            toast.error(err.message);
+
+          })
       })
-      .catch((err) => {
-          console.log(err.message);
-          
+      .catch(err => {
+        toast.error(err.message);
+
       })
-    })
-    .catch(err => {
-      console.log(err.message);
-      
-    })
-    
+
   }
-  const handlegoggle = () =>{
-        googlelogin()
-        .then((result) =>{
-          // console.log(result.user);
-          
-        })
-        .catch((err) => console.log(err.message)
-        )
+  const handlegoggle = () => {
+    googlelogin()
+      .then((result) => {
+        // console.log(result.user);
+
+      })
+      .catch((err) => console.log(err.message)
+      )
   }
+  // its for scrolling 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
       <div className="w-full my-4 max-w-md bg-white rounded-lg shadow-md p-6">
@@ -72,9 +79,9 @@ const Register = () => {
             <input
               type="text"
               name="name"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg"
               placeholder="Enter your name"
-              
+
             />
           </div>
 
@@ -89,9 +96,9 @@ const Register = () => {
             <input
               type="url"
               name="photoURL"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg"
               placeholder="Enter a photo URL"
-              
+
             />
           </div>
 
@@ -107,9 +114,9 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg"
               placeholder="Enter your email"
-              
+
             />
           </div>
 
@@ -125,17 +132,19 @@ const Register = () => {
             <input
               type={showpass ? "text" : "password"}
               name="password"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg"
               placeholder="Enter your password"
-              
+
             />
-            <button 
-              onClick={()=>setShowpass(!showpass)}
-              className="btn-xs bg-base-200 rounded-md absolute right-2 bottom-3">
-              {
-                showpass ? <FaEyeSlash /> :<FaEye />
-              }
-              </button>
+            <div>
+              <div
+                onClick={() => setShowpass(!showpass)}
+                className="btn-xs bg-base-200 rounded-md absolute right-2 bottom-3">
+                {
+                  showpass ? <FaEyeSlash /> : <FaEye />
+                }
+              </div>
+            </div>
           </div>
 
           {/* Register Button */}
@@ -150,15 +159,15 @@ const Register = () => {
         </form>
         {/* google log in */}
         <div className="mt-6">
-            <button
-              onClick={handlegoggle}
-              className="w-full px-4 py-2 bg-gray-500 text-white 
+          <button
+            onClick={handlegoggle}
+            className="w-full px-4 py-2 bg-gray-500 text-white 
               rounded-lg flex items-center justify-center gap-2"
-            >
+          >
             <BsGoogle />
-             Google
-            </button>
-          </div>
+            Google
+          </button>
+        </div>
         {/* Login Link */}
         <p className="mt-4 text-sm text-center text-gray-600">
           Already have an account?{" "}
