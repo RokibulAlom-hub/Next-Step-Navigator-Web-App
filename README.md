@@ -1,7 +1,9 @@
 # Next-Step Navigator  
 
-Next-Step Navigator is a dynamic and user-friendly career counseling website designed to provide personalized guidance for users exploring their career paths. The platform aims to simplify the decision-making process by offering resources, interactive tools, and tailored recommendations to users.  
+Next-Step Navigator is a dynamic and user-friendly career counseling website designed to provide personalized guidance for users exploring their career paths. The platform aims to simplify the decision-making process by offering resources, interactive tools, and tailored recommendations to users. 
 
+- **Live Website**: [Next-Step Navigator]https://nextstep-navigator.web.app/
+- 
 ## Key Features  
 
 - **Interactive Design**: The website offers an intuitive interface with smooth navigation, ensuring a seamless user experience.  
